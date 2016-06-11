@@ -1,0 +1,42 @@
+#
+# cgit config
+# see cgitrc(5) for details
+
+root-title=$CGIT_TITLE
+root-desc=$CGIT_DESC
+
+source-filter=/usr/libexec/cgit/filters/syntax-highlighting.sh
+
+# Default Theme
+css=/cgit-data/cgit.css
+logo=/cgit-data/cgit.png
+
+# Enable statistics per week, month and quarter
+max-stats=quarter
+
+enable-index-links=1
+enable-index-owner=0
+enable-remote-branches=1
+enable-log-filecount=1
+enable-log-linecount=1
+enable-git-config=1
+snapshots=tar.gz tar.bz2 zip
+
+##
+### List of common mimetypes
+###
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
+
+robots=noindex, nofollow
+
+virtual-root=$CGIT_VROOT
+
+section-from-path=$CGIT_SECTION_FROM_STARTPATH
+
+scan-path=/srv/git/
