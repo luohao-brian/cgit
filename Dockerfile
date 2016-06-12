@@ -12,7 +12,7 @@ ADD epel.repo /etc/yum.repos.d/epel.repo
 RUN yum -y update && \
     yum install -y cgit git gettext && \
     yum clean all
-
+RUN systemctl disable httpd
 RUN mkdir /srv/git
 VOLUME ["/srv/git"]
 
