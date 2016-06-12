@@ -6,11 +6,11 @@ LABEL name="cGit P5 Image" \
     build-date="2016-05-19"
 
 # Install all prerequisite RPM packages
-RUN rm -rf /etc/yum.repos.d/* && \
-    curl -o /etc/yum.repos.d/base.repo http://www.wiaapp.cn/downloads/yum/centos/7/CentOS7-Base-163.repo && \
-    curl -o /etc/yum.repos.d/epel.repo http://www.wiaapp.cn/downloads/yum/centos/7/epel.repo && \
-    yum -y update && \
-    yum install -y cgit git gettext&& \
+RUN rm -rf /etc/yum.repos.d/* 
+ADD base.repo /etc/yum.repos.d/base.repo
+ADD epel.repo /etc/yum.repos.d/epel.repo
+RUN yum -y update && \
+    yum install -y cgit git gettext && \
     yum clean all
 
 RUN mkdir /srv/git
